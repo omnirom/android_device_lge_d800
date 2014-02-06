@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright 2012 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +14,15 @@
 # limitations under the License.
 #
 
-include device/lge/g2-common/BoardConfigCommon.mk
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-TARGET_KERNEL_CONFIG := custom_d800_defconfig
+PRODUCT_DEVICE := d800
+PRODUCT_NAME := full_d800
+PRODUCT_BRAND := LGE
+PRODUCT_MODEL := LG-D800
+PRODUCT_MANUFACTURER := lge
+PRODUCT_RESTRICT_VENDOR_FILES := false
 
-TARGET_OTA_ASSERT_DEVICE := d800,g2,galbi
-
-G2_DTS_TARGET := msm8974-g2-att
+# Inherit from hardware-specific part of the product configuration
+$(call inherit-product, device/lge/d800/device.mk)

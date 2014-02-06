@@ -14,12 +14,11 @@
 # limitations under the License.
 #
 
-$(call inherit-product-if-exists, vendor/lge/d800/d800-vendor.mk)
+$(call inherit-product-if-exists, vendor/lge/galbi/galbi-gsm-vendor.mk)
 $(call inherit-product, device/lge/g2-common/g2.mk)
 
 ## overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	telephony.lteOnGsmDevice=1 \
